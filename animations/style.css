@@ -1,0 +1,9 @@
+#sample {
+	width: 100px;
+	height: 100px;
+	background: red;
+	transition: all 0.5s;
+}
+#sample:hover {
+	  transform: rotate(360deg) scaleY(3, 5) translateX(100px);  
+	  }
