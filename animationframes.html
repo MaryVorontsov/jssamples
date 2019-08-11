@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.square {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+  margin: 2px;
+  transition: all 1s;
+}
+
+.square1.active {
+  animation-name: square1animation;
+  animation-duration: 3s;
+}
+
+.square2.active {
+  animation-name: square2animation;
+  animation-duration: 3s;
+}
+
+.square2 {
+  position: absolute;
+  left: 0px;
+  top: 120px;
+}
+
+@keyframes square1animation {
+  0% {
+    background-color: red;
+  }
+
+  25% {
+    background-color: yellow;
+  }
+
+  50% {
+    background-color: blue;
+  }
+
+  75% {
+    transform: translate(200px, 200px);
+  }
+
+  100% {
+    background-color: green;
+  }
+}
+
+@keyframes square2animation {
+  0% {
+    background-color: red;
+    transform: rotate(0);
+    left: 0;
+    top: 120px;
+  }
+
+  25% {
+    background-color: green;
+    transform: rotate(45deg);
+  }
+
+  50% {
+    background-color: yellow;
+    left: 300px;
+  }
+
+  75% {
+    background-color: black;
+    transform: rotate(90deg);
+  }
+
+  100% {
+    background-color: red;
+    transform: rotate(0);
+    left: 0px;
+    top: 120px;
+  }
+}
+
+
+body {
+  display: flex;
+}
+
+.active {
+  transform: scale(1.2);
+}
+	</style>
+</head>
+<body>
+<div class="square square1"></div>
+<div class="square square2"></div>
+<div class="square square3"></div>
+<div class="square square4"></div>
+</body>
+<script>
+	var squares = document.querySelectorAll(".square");
+console.log(squares);
+for (i = 0; i < squares.length; i++) {
+  squares[i].onclick = function(event) {
+    console.log(event.target);
+    event.target.classList.toggle('active');
+  }
+}
+
+</script>
+</html>
