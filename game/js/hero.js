@@ -12,4 +12,10 @@ function Hero(game, elClass, x, y) {
     this.down = function() {
     	y+=1;
     }
+    this.right = function(){
+    	x += 1;
+    }
+    this.left = function(){
+    	x -=1;
+    }
 }
