@@ -16,4 +16,4 @@ document.onkeyup = function(e) {
 }
 setInterval(function() {
     hero.draw();
-}, 500)
+}, 100)
