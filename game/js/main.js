@@ -1,5 +1,8 @@
 var game = new Game('#stage', 96, 48);
 var hero = new Hero(game, 'hero', 10, 10);
+for (var i = 0; i < 100; i++) {
+	createRandomCoin(game, 'coin');
+}
 game.start();
 hero.draw();
 document.onkeyup = function(e) {
