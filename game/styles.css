@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 #stage {
 	background-color: lightgreen;
 	width: 960px;
@@ -10,8 +14,8 @@
 	left: 0px;
 	top: 0px;
 	width: 60px;
-	height: 80px;
-	background: url(img/bullHero.png);
+	height: 60px;
+	background: url(img/wildman-head.png);
 	background-size: contain;
 	transform: translate(-50%, -50%) rotate(-90deg);
 	transition: all 0.1s;
@@ -22,8 +26,17 @@
 	top: 0px;
 	width: 30px;
 	height: 30px;
-	background: yellow;
-	border-radius: 50%;
+	background: url(img/gold-icon.png);
+	background-size: contain;
 	transform: translate(-50%, -50%);
 	transition: all 0.1s;	
+}
+#info {
+	background-color: lightyellow;
+	width: 100px;
+	height: 480px;
+	top: 30px;
+	left: 30px;
+	position: fixed;
+	padding: 10px;
 }

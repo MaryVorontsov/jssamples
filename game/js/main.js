@@ -1,10 +1,13 @@
 var game = new Game('#stage', 96, 48);
+var info = new Info(1,[],0);
 var hero = new Hero(game, 'hero', 10, 10);
-for (var i = 0; i < 100; i++) {
-	createRandomCoin(game, 'coin');
+var coinsCollection = [];
+for (var i = 0; i < 20; i++) {
+	coinsCollection.push(createRandomCoin(game, 'coin'));
 }
 game.start();
 hero.draw();
+info.draw();
 document.onkeyup = function(e) {
     console.log(e);
     if (e.code == 'ArrowUp') {
@@ -18,5 +21,12 @@ document.onkeyup = function(e) {
     }
 }
 setInterval(function() {
+	coinsCollection.forEach(function(coin, index){
+		if (intersect(hero, coin, 3)) {
+			info.coins +=1;
+			coin.destroy();
+		}
+	})
     hero.draw();
+    info.draw();
 }, 100)
